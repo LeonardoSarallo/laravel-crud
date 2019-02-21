@@ -13,6 +13,7 @@
               <th>Cognome</th>
               <th>Anni</th>
               <th>Sesso</th>
+              <th>Visualizza</th>
             </tr>
           </thead>
           <tbody>
@@ -23,6 +24,9 @@
                 <td>{{ $user->lastname}}</td>
                 <td>{{ $user->age}}</td>
                 <td>{{ $user->gender}}</td>
+                <td>
+                  <a class="btn btn-secondary" href="{{ route('utenti.show', $user->id) }}">view</a>
+                </td>
               </tr>
             @endforeach
           </tbody>
