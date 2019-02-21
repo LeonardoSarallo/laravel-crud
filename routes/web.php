@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('/utenti', 'UserController');
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+  return view('welcome');
 });
