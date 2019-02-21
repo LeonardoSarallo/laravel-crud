@@ -52,17 +52,24 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+
+        return view('users.edit', compact('user'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+         $user = User::find($id);
+         $data = $request->all();
+         $user->update($data);
+         return redirect()->back();
     }
 
 
     public function destroy($id)
     {
-        //
+        $user =User::find($id);
+        $user->delete();
+        return redirect()->back();
     }
 }

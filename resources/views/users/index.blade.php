@@ -14,6 +14,8 @@
               <th>Anni</th>
               <th>Sesso</th>
               <th>Visualizza</th>
+              <th>Aggiorna</th>
+              <th>Elimina</th>
             </tr>
           </thead>
           <tbody>
@@ -26,6 +28,16 @@
                 <td>{{ $user->gender}}</td>
                 <td>
                   <a class="btn btn-secondary" href="{{ route('utenti.show', $user->id) }}">view</a>
+                </td>
+                <td>
+                  <a class="btn btn-success" href="{{ route('utenti.edit', $user->id) }}">Edit</a>
+                </td>
+                <td>
+                  <form class="" action="{{ route('utenti.destroy', $user->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input class="btn btn-danger" type="submit" name="" value="elimina">
+                  </form>
                 </td>
               </tr>
             @endforeach
