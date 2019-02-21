@@ -15,13 +15,25 @@ class UserController extends Controller
 
     public function create()
     {
-        //
+      return view('users.create');
     }
 
 
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $newUser = new User();
+        $newUser->name = $data['name'];
+        $newUser->lastname = $data['lastname'];
+        $newUser->age = $data['age'];
+        $newUser->gender = $data['gender'];
+
+        $newUser->save();
+
+        return redirect()->route('utenti.index');
+
+
     }
 
 
