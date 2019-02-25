@@ -9,7 +9,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::all();
+        $users = User::paginate();
         return view('users.index', compact('users'));
     }
 
@@ -22,6 +22,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        $validateData = $request->validate([
+          'name' => 'required',
+          'lastname'=> 'required',
+          'age' => 'required',
+          'gender' => 'required'
+
+        ]);
 
         $newUser = new User();
         $newUser->fill($data);

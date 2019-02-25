@@ -3,6 +3,15 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
+        @if ($errors->any())
+          <div class="aler alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
         <h1>Aggiungi nuovo utente</h1>
         <form class="form-group" action="{{ route('utenti.store') }}" method="post">
           @csrf

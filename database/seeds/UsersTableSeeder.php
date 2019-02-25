@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-      for ($i = 0; $i < 10 ; $i++) {
+      for ($i = 0; $i < 1000 ; $i++) {
 
         $newUser = new User;
         $gender = $faker->randomElement(['m', 'f']);
