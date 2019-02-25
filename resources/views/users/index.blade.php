@@ -21,11 +21,11 @@
           <tbody>
             @foreach ($users as $user)
               <tr>
-                <td>{{ $user->id}}</td>
-                <td>{{ $user->name}}</td>
-                <td>{{ $user->lastname}}</td>
-                <td>{{ $user->age}}</td>
-                <td>{{ $user->gender}}</td>
+                <td>{{ $user->id }}</td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->lastname }}</td>
+                <td>{{ $user->age }}</td>
+                <td>{{ $user->gender }}</td>
                 <td>
                   <a class="btn btn-secondary" href="{{ route('utenti.show', $user->id) }}">view</a>
                 </td>
