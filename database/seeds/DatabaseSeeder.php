@@ -10,7 +10,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   dd('sono dentro db seeder');
         // $this->call(UsersTableSeeder::class);
     }
 }
